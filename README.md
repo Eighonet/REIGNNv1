@@ -1,1 +1,1 @@
-# RMGNN
+# Paper
