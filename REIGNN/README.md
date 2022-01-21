@@ -1,3 +1,3 @@
 # REIGNN
 
-The folder with the model & test .ipynb 
+Folder with the model & test .ipynb 
