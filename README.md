@@ -13,7 +13,7 @@ PDF: to be added.
 numpy==1.19.5
 pandas==1.3.0
 torch==1.8.1
-torch-sparse==0.6.12
+torch-sparse==0.6.12  
 torch-scatter==2.0.8
 torch-cluster==1.5.9
 torch-spline-conv==1.2.1
