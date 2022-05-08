@@ -1,5 +1,8 @@
 # REIGNN | Version 1 
 
+![Pipeline_image](model/images/recommender_pipeline_rev4.png#gh-light-mode-only)
+![Pipeline_image](model/images/recommender_pipeline_rev4dm.png#gh-dark-mode-only)
+
 Welcome to the official repo of the REIGNNv1 model -- GNN-based recommender system for scientific collaborations assessment. Here we present the source code for ISWC'22 paper "Recommendations Become Even More Useful:
 Multi-task Extension of Scientific Collaborations Forecasting".
 
@@ -73,10 +76,7 @@ In order to obtain full datasets, it is required to download additional files vi
 
 ## Private
 
-# Model
-
-![Pipeline_image](model/images/recommender_pipeline_rev4.png#gh-light-mode-only)
-![Pipeline_image](model/images/recommender_pipeline_rev4dm.png#gh-dark-mode-only)
+# Model running
 
 To test MELL, you can run a following command.
 
