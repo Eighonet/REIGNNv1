@@ -1,10 +1,9 @@
 # REIGNN | Version 1 
 
-Welcome to the official repo of the REIGNNv1 model. Here we present the source code from ISWC'22 paper "Recommendations Become Even More Useful:
+Welcome to the official repo of the REIGNNv1 model. Here we present the source code for ISWC'22 paper "Recommendations Become Even More Useful:
 Multi-task Extension of Scientific Collaborations Forecasting".
 
-Vladislav Tishin, Artyom Sosedka, Natalia Semenova, Anastasia
-Martynova, Vadim Porvatov
+Vladislav Tishin, Artyom Sosedka, Natalia Semenova, Anastasia Martynova, [Vadim Porvatov](https://www.researchgate.net/profile/Vadim-Porvatov)
 
 PDF: to be added.
 
