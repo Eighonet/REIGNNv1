@@ -65,9 +65,16 @@ website](https://www.scimagojr.com).
   </tr>
 </table>
 
+In order to obtain full datasets, it is required to download additional files via download.sh. Final revision of files structure includes general and private parts of datasets.
+
+## General
+
+
+
+## Private
+
 # Model
 
-In order to launch the tests, you need to create environment with the help of requirements.txt and download the full dataset via download.sh.
 
 # Constructing your own dataset
 
