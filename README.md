@@ -75,6 +75,8 @@ In order to obtain full datasets, it is required to download additional files vi
 
 # Model
 
+![Pipeline_image](model/images/recommender_pipeline_rev4.png#gh-light-mode-only)
+![Pipeline_image](model/images/recommender_pipeline_rev4dm.png#gh-dark-mode-only)
 
 # Constructing your own dataset
 
