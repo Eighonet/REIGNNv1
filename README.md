@@ -1,5 +1,8 @@
 # REIGNN | Version 1 
 
+![Pipeline_image](model/images/recommender_pipeline_rev4.png#gh-light-mode-only)
+![Pipeline_image](model/images/recommender_pipeline_rev4dm.png#gh-dark-mode-only)
+
 Welcome to the official repo of the REIGNNv1 model -- GNN-based recommender system for scientific collaborations assessment. Here we present the source code for ISWC'22 paper "Recommendations Become Even More Useful:
 Multi-task Extension of Scientific Collaborations Forecasting".
 
@@ -65,7 +68,7 @@ website](https://www.scimagojr.com).
   </tr>
 </table>
 
-In order to obtain full datasets, it is required to download additional files via download.sh. Final revision of files structure includes general and private parts of datasets.
+In order to obtain full datasets, it is required to download additional files via _download.sh_. Final revision of files structure includes general and private parts of datasets.
 
 ## General
 
@@ -73,8 +76,32 @@ In order to obtain full datasets, it is required to download additional files vi
 
 ## Private
 
-# Model
+# Model running
 
+To test MELL, you can run a following command.
+
+```
+python main.py
+```
+
+This command uses the sample dataset from _/datasets_ folder and receive as an input following args: 
+
+You also can use REIGNN.py directly in your own experimental environment:
+
+
+```python
+from MELL.MELL import MELL_model
+
+# you should get L, N, directed, edges for training and edges for testing from your data set
+# you also should decide the hyper parameters: d, k, lamm, beta, gamma
+
+# define the model
+model = MELL_model(L, N, directed, train_edges, d, k, lamm, beta, gamma)
+# train
+model.train(500)
+# predict
+prediction = [ model.predict(t) for t in test_edges]
+```
 
 # Constructing your own dataset
 
