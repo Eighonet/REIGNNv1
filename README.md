@@ -68,13 +68,20 @@ website](https://www.scimagojr.com).
   </tr>
 </table>
 
-In order to obtain full datasets, it is required to download additional files via _download.sh_. Final revision of files structure includes general and private parts of datasets.
+In order to obtain full datasets, it is required to download additional files via _download.sh_. Final revision of files structure includes general and local parts of datasets.
 
-## General
+## General part (common for all datasets)
+- SSORC_CS_2010_2021_authors_edge_list.csv -
+- SSORC_CS_2010_2021_authors_edges_papers_indices.csv - 
+- SSORC_CS_2010_2021_authors_features.csv -
+- SSORC_CS_2010_2021_papers_features_vectorized_compressed_32.csv -
 
-
-
-## Private
+## Local part (unique for each dataset)
+- <...>_authors_edges_papers_indices.csv - 
+- SSORC_CS_10_21_1437_3164_unfiltered_authors.edgelist - 
+- SSORC_CS_10_21_1437_3164_unfiltered_journals.csv - 
+- SSORC_CS_10_21_1437_3164_unfiltered_papers.edgelist - 
+- SSORC_CS_10_21_1437_3164_unfiltered_papers_targets - 
 
 # Model running
 
@@ -124,4 +131,7 @@ If you have some questions about the code, you are welcome to open an issue or s
 
 # Citation
 
+```
 To be added
+```
+
