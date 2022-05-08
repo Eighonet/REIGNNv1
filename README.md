@@ -91,7 +91,7 @@ You also can use REIGNN.py directly in your own experimental environment:
 
 ```python
 from REIGNN import REIGNN
-frim utils import train
+from utils import train
 
 # description of
 # input data
