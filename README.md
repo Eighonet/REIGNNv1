@@ -6,8 +6,8 @@
 Welcome to the official repo of the REIGNNv1 model -- GNN-based recommender system for scientific collaborations assessment. Here we present the source code for ISWC'22 paper "Recommendations Become Even More Useful:
 Multi-task Extension of Scientific Collaborations Forecasting".
 
-_Vladislav Tishin, Artyom Sosedka, Natalia Semenova, Anastasia Martynova, [Vadim Porvatov](https://www.researchgate.net/profile/Vadim-Porvatov)
-_
+Vladislav Tishin, Artyom Sosedka, Natalia Semenova, Anastasia Martynova, [Vadim Porvatov](https://www.researchgate.net/profile/Vadim-Porvatov)
+
 PDF: _to be added_.
 
 # Prerequisites
@@ -78,7 +78,7 @@ In order to obtain full datasets, it is required to download additional files vi
 
 # Model running
 
-To test MELL, you can run a following command.
+You can run a following command to test REIGNN
 
 ```
 python main.py
@@ -90,7 +90,7 @@ You also can use REIGNN.py directly in your own experimental environment:
 
 
 ```python
-from REIGNN import REIGNN
+from model.REIGNN import REIGNN
 from utils import train
 
 # description of
@@ -108,6 +108,15 @@ prediction = [model.predict(t) for t in test_edges]
 ```
 
 # Constructing your own dataset
+
+We also publish our code regarding processing of initial datasets. It can be freely used for the construction of new heterogeneous graphs.
+
+```python
+from extractor import loader
+
+# and so it goes
+
+```
 
 # Contact us
 
