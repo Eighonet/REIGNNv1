@@ -8,7 +8,7 @@ Multi-task Extension of Scientific Collaborations Forecasting".
 
 Vladislav Tishin, Artyom Sosedka, Natalia Semenova, Anastasia Martynova, [Vadim Porvatov](https://www.researchgate.net/profile/Vadim-Porvatov)
 
-PDF: to be added.
+PDF: _to be added_.
 
 # Prerequisites
 
@@ -90,17 +90,21 @@ You also can use REIGNN.py directly in your own experimental environment:
 
 
 ```python
-from MELL.MELL import MELL_model
+from REIGNN import REIGNN
+frim utils import train
 
-# you should get L, N, directed, edges for training and edges for testing from your data set
-# you also should decide the hyper parameters: d, k, lamm, beta, gamma
+# description of
+# input data
 
 # define the model
-model = MELL_model(L, N, directed, train_edges, d, k, lamm, beta, gamma)
+model = REIGNN(data_citation, heads, train_data_a, val_data_a, test_data_a, authors_to_papers, 
+                   cit_layers, latent_size_cit, auth_layers, latent_size_auth, link_size)
 # train
-model.train(500)
+epochs = 100
+train(epochs)
+
 # predict
-prediction = [ model.predict(t) for t in test_edges]
+prediction = [model.predict(t) for t in test_edges]
 ```
 
 # Constructing your own dataset
