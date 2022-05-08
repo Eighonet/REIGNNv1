@@ -9,14 +9,8 @@ PDF: to be added.
 
 # Prerequisites
 
-```json
-{
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
-}
 ```
-
+{
 numpy==1.19.5
 pandas==1.3.0
 torch==1.8.1
@@ -26,6 +20,8 @@ torch-cluster==1.5.9
 torch-spline-conv==1.2.1
 torch-geometric==2.0.3
 wandb==0.12.9
+}
+```
 
 # Datasets
 
