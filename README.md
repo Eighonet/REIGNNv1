@@ -116,7 +116,7 @@ operator, link_size, heads = "hadamard", 128, 1
 mt_weights = [0.05, 0.05, 0.05, 0.05]
 
 # W&B parameters
-wandb_output, project_name, entity, group  = False, 'REIGNN', "test_entity", "test_group"
+wandb_output, project_name, entity, group  = False, 'REIGNN', 'test_entity', 'test_group'
 
 # define the model
 model = REIGNN(citation_graph.to(device), heads, device,\
