@@ -98,8 +98,6 @@ from model.dataloader import get_data
 from model.utils import run
 from model.REIGNN import REIGNN
 
-# description of
-# input data
 root_dir = '../'
 dataset_name, split_name, split_number = 'CS1021small', '5_0.1', 0
 citation_graph, train_data, val_data, test_data, authors_to_papers, batch_list_x, batch_list_owner = get_data(root_dir, dataset_name, split_name, split_number)
