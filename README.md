@@ -79,41 +79,54 @@ We use common subgraph extracted from Semantic Scholar Corpus as the basis for a
 - _SSORC_CS_2010_2021_papers_features_vectorized_compressed_32.csv_ - table with vectorized via Universal Sentence Encoder abstracts of papers.
 
 ## Local part (unique for each dataset)
-- _<...>_authors.edgelist_ - edge list of a dataset citations graph.
-- _<...>_papers.edgelist_ - edge list of a dataset co-authorship graph.
-- _<...>_authors_edges_papers_indices.csv_ - table describing relations between edges in a co-authorship graph (collaborations) and nodes in a citation graph (papers). 
-- _<...>_papers_targets.csv_ - target values for each auxiliary task regarding edges in a co-authorship graph.
+- <...>_authors.edgelist_ - edge list of a dataset citations graph.
+- <...>_papers.edgelist_ - edge list of a dataset co-authorship graph.
+- <...>_authors_edges_papers_indices.csv_ - table describing relations between edges in a co-authorship graph (collaborations) and nodes in a citation graph (papers). 
+- <...>_papers_targets.csv_ - target values for each auxiliary task regarding edges in a co-authorship graph.
 
 
 # Model running
 
-You can run a following command to test REIGNN
-
-```
-python main.py
-```
-
-This command uses the sample dataset from _/datasets_ folder and receive as an input following args: 
-
-You also can use REIGNN.py directly in your own experimental environment:
+You can use REIGNN.py directly in your own experimental environment:
 
 
 ```python
-from model.REIGNN import REIGNN
-from utils import train
+import torch
+import torch.nn as nn
 
-# description of
-# input data
+from model.dataloader import get_data
+from model.utils import run
+from model.REIGNN import REIGNN
+
+root_dir = '../'
+dataset_name, split_name, split_number = 'CS1021small', '5_0.1', 0
+citation_graph, train_data, val_data, test_data, authors_to_papers, batch_list_x, batch_list_owner = get_data(root_dir, dataset_name, split_name, split_number)
+
+# Global
+epochs_per_launch, lr = 15000, 0.001
+device = 'cuda:0'
+
+# Local
+c_conv_num, c_latent_size, a_conv_num, a_latent_size = 2, 128, 3, 384
+operator, link_size, heads = "hadamard", 128, 1 
+
+# Multitask weights
+mt_weights = [0.05, 0.05, 0.05, 0.05]
+
+# W&B parameters
+wandb_output, project_name, entity, group  = False, 'REIGNN', 'test_entity', 'test_group'
 
 # define the model
-model = REIGNN(data_citation, heads, train_data_a, val_data_a, test_data_a, authors_to_papers, 
-                   cit_layers, latent_size_cit, auth_layers, latent_size_auth, link_size)
-# train
-epochs = 100
-train(epochs)
+model = REIGNN(citation_graph.to(device), heads, device,\
+                            train_data.to(device), val_data.to(device), test_data.to(device),
+                            authors_to_papers,
+                            cit_layers = c_conv_num, latent_size_cit = c_latent_size,
+                            auth_layers = a_conv_num, latent_size_auth = a_latent_size,
+                            link_size = link_size).to(device) 
 
-# predict
-prediction = [model.predict(t) for t in test_edges]
+optimizer, criterion = torch.optim.Adam(model.parameters(), lr=lr), nn.L1Loss()
+run(wandb_output, project_name, group, entity, mt_weights, model, optimizer, criterion, operator, batch_list_x, batch_list_owner, epochs_per_launch)
+
 ```
 
 # Constructing your own dataset
