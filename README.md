@@ -71,17 +71,19 @@ website](https://www.scimagojr.com).
 In order to obtain full datasets, it is required to download additional files via _download.sh_. Final revision of files structure includes general and local parts of datasets.
 
 ## General part (common for all datasets)
-- SSORC_CS_2010_2021_authors_edge_list.csv -
-- SSORC_CS_2010_2021_authors_edges_papers_indices.csv - 
-- SSORC_CS_2010_2021_authors_features.csv -
-- SSORC_CS_2010_2021_papers_features_vectorized_compressed_32.csv -
+We use common subgraph extracted from Semantic Scholar Corpus as the basis for all of our datasets. All papers belong to the period from January 1st 2010 to December 31st 2021 and related to the area of Computer Science. 
+
+- SSORC_CS_2010_2021_authors_edge_list.csv - common graph edge list.
+- SSORC_CS_2010_2021_authors_edges_papers_indices.csv - common table describing relations between edges in a co-authorship graph (collaborations) and nodes in a citation graph (papers).  
+- SSORC_CS_2010_2021_authors_features.csv - table with one-hot encoded authors' research interests.
+- SSORC_CS_2010_2021_papers_features_vectorized_compressed_32.csv - table with vectorized via Universal Sentence Encoder abstracts of papers.
 
 ## Local part (unique for each dataset)
-- <...>_authors_edges_papers_indices.csv - 
-- SSORC_CS_10_21_1437_3164_unfiltered_authors.edgelist - 
-- SSORC_CS_10_21_1437_3164_unfiltered_journals.csv - 
-- SSORC_CS_10_21_1437_3164_unfiltered_papers.edgelist - 
-- SSORC_CS_10_21_1437_3164_unfiltered_papers_targets - 
+- <...>_authors.edgelist - edge list of a dataset citations graph.
+- <...>_papers.edgelist - edge list of a dataset co-authorship graph.
+- <...>_authors_edges_papers_indices.csv - table describing relations between edges in a co-authorship graph (collaborations) and nodes in a citation graph (papers).  
+- <...>_papers_targets.csv - target values for each auxiliary task regarding edges in a co-authorship graph.
+
 
 # Model running
 
