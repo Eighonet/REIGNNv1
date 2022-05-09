@@ -108,15 +108,15 @@ from model.REIGNN import REIGNN
 
 # description of
 # input data
-
-citation_graph, train_data, val_data, test_data, authors_to_papers, batch_list_x, batch_list_owner = get_data('../', 'CS1021small', '5_0.1', 0)
+root_dir = '../'
+dataset_name, split_name, split_number = 'CS1021small', '5_0.1', 0
+citation_graph, train_data, val_data, test_data, authors_to_papers, batch_list_x, batch_list_owner = get_data(root_dir, dataset_name, split_name, split_number)
 
 # Global
 epochs_per_launch, lr = 15000, 0.001
 device = 'cuda:0'
 
 # Local
-
 c_conv_num, c_latent_size, a_conv_num, a_latent_size = 2, 128, 3, 384
 operator, link_size, heads = "hadamard", 128, 1 
 
@@ -136,9 +136,6 @@ model = REIGNN(citation_graph.to(device), heads, device,\
 
 optimizer, criterion = torch.optim.Adam(model.parameters(), lr=lr), nn.L1Loss()
 run(wandb_output, project_name, group, entity, mt_weights, model, optimizer, criterion, operator, batch_list_x, batch_list_owner, epochs_per_launch)
-
-model = REIGNN(data_citation, heads, train_data_a, val_data_a, test_data_a, authors_to_papers, 
-                   cit_layers, latent_size_cit, auth_layers, latent_size_auth, link_size)
 
 ```
 
