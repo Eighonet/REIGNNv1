@@ -79,10 +79,10 @@ We use common subgraph extracted from Semantic Scholar Corpus as the basis for a
 - _SSORC_CS_2010_2021_papers_features_vectorized_compressed_32.csv_ - table with vectorized via Universal Sentence Encoder abstracts of papers.
 
 ## Local part (unique for each dataset)
-- _<...>_authors.edgelist_ - edge list of a dataset citations graph.
-- _<...>_papers.edgelist_ - edge list of a dataset co-authorship graph.
-- _<...>_authors_edges_papers_indices.csv_ - table describing relations between edges in a co-authorship graph (collaborations) and nodes in a citation graph (papers). 
-- _<...>_papers_targets.csv_ - target values for each auxiliary task regarding edges in a co-authorship graph.
+- <...>_authors.edgelist_ - edge list of a dataset citations graph.
+- <...>_papers.edgelist_ - edge list of a dataset co-authorship graph.
+- <...>_authors_edges_papers_indices.csv_ - table describing relations between edges in a co-authorship graph (collaborations) and nodes in a citation graph (papers). 
+- <...>_papers_targets.csv_ - target values for each auxiliary task regarding edges in a co-authorship graph.
 
 
 # Model running
