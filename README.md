@@ -99,21 +99,47 @@ You also can use REIGNN.py directly in your own experimental environment:
 
 
 ```python
+import torch
+import torch.nn as nn
+
+from model.dataloader import get_data
+from model.utils import run
 from model.REIGNN import REIGNN
-from utils import train
 
 # description of
 # input data
 
+citation_graph, train_data, val_data, test_data, authors_to_papers, batch_list_x, batch_list_owner = get_data('../', 'CS1021small', '5_0.1', 0)
+
+# Global
+epochs_per_launch, lr = 15000, 0.001
+device = 'cuda:0'
+
+# Local
+
+c_conv_num, c_latent_size, a_conv_num, a_latent_size = 2, 128, 3, 384
+operator, link_size, heads = "hadamard", 128, 1 
+
+# Multitask weights
+mt_weights = [0.05, 0.05, 0.05, 0.05]
+
+# W&B parameters
+wandb_output, project_name, entity, group  = False, 'REIGNN', "test_entity", "test_group"
+
 # define the model
+model = REIGNN(citation_graph.to(device), heads, device,\
+                            train_data.to(device), val_data.to(device), test_data.to(device),
+                            authors_to_papers,
+                            cit_layers = c_conv_num, latent_size_cit = c_latent_size,
+                            auth_layers = a_conv_num, latent_size_auth = a_latent_size,
+                            link_size = link_size).to(device) 
+
+optimizer, criterion = torch.optim.Adam(model.parameters(), lr=lr), nn.L1Loss()
+run(wandb_output, project_name, group, entity, mt_weights, model, optimizer, criterion, operator, batch_list_x, batch_list_owner, epochs_per_launch)
+
 model = REIGNN(data_citation, heads, train_data_a, val_data_a, test_data_a, authors_to_papers, 
                    cit_layers, latent_size_cit, auth_layers, latent_size_auth, link_size)
-# train
-epochs = 100
-train(epochs)
 
-# predict
-prediction = [model.predict(t) for t in test_edges]
 ```
 
 # Constructing your own dataset
