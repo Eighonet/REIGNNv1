@@ -87,15 +87,7 @@ We use common subgraph extracted from Semantic Scholar Corpus as the basis for a
 
 # Model running
 
-You can run a following command to test REIGNN
-
-```
-python main.py
-```
-
-This command uses the sample dataset from _/datasets_ folder and receive as an input following args: 
-
-You also can use REIGNN.py directly in your own experimental environment:
+You can use REIGNN.py directly in your own experimental environment:
 
 
 ```python
