@@ -163,7 +163,7 @@ If you have some questions about the code, you are welcome to open an issue or s
 
 # License
 
-Established code released as open-source software under the MIT license
+Established code released as open-source software under the MIT license.
 
 # Citation
 
