@@ -232,7 +232,8 @@ def extract_subgraph(global_dataset:list, processed_data:list, subgraph_name:str
                      ready_flag = 1
         else:
             break
-
+    print(len(sub_A.nodes), len(sub_A.edges))
+    
     sub_A_edges = list(sub_A.edges())
     
     authors_edges_papers_sub = [
