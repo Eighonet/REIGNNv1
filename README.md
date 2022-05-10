@@ -152,7 +152,7 @@ processed_data = preprocessing(global_dataset)
 # local dataset parameters 
 local_dataset_name, nodes_number = 'test_local_dataset', 5000
 
-# generate and save local dataset to ./datasets/%local_dataset_name$
+# generate and save local dataset to ./datasets/%local_dataset_name%
 extract_subgraph(global_dataset, processed_data, local_dataset_name, nodes_number)
 
 ```
@@ -160,6 +160,8 @@ extract_subgraph(global_dataset, processed_data, local_dataset_name, nodes_numbe
 # Contact us
 
 If you have some questions about the code, you are welcome to open an issue or send me an email, I will respond to that as soon as possible.
+
+# License
 
 # Citation
 
