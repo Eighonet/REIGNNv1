@@ -134,9 +134,26 @@ run(wandb_output, project_name, group, entity, mt_weights, model, optimizer, cri
 We also publish our code regarding processing of initial datasets. It can be freely used for the construction of new heterogeneous graphs.
 
 ```python
-from extractor import loader
+from dataset_extractor.loader import load
+from dataset_extractor.utils import parse_global_dataset, preprocessing, extract_subgraph
 
-# and so it goes
+# load and unpack Semantic Scholar Open Research Corpus
+load()
+
+# global dataset parameters
+areas = ["Computer Science", "Biology]
+year_start, year_end = 2018, 2021
+global_dataset_name = "test_dataset"
+
+# generate and save global dataset to ./processed_data
+global_dataset = parse_global_dataset(areas, year_start, year_end, global_dataset_name)
+processed_data = preprocessing(global_dataset)
+
+# local dataset parameters 
+local_dataset_name, nodes_number = "test_local_dataset", 5000
+
+# generate and save local dataset to ./datasets/%local_dataset_name$
+extract_subgraph(global_dataset, processed_data, local_dataset_name, nodes_number)
 
 ```
 
