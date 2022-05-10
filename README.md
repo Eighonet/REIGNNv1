@@ -8,7 +8,7 @@ Multi-task Extension of Scientific Collaborations Forecasting".
 
 Vladislav Tishin, Artyom Sosedka, Natalia Semenova, Anastasia Martynova, [Vadim Porvatov](https://www.researchgate.net/profile/Vadim-Porvatov)
 
-PDF: _to be added_.
+arXiv PDF: _to be added_.
 
 # Prerequisites
 
@@ -162,6 +162,8 @@ extract_subgraph(global_dataset, processed_data, local_dataset_name, nodes_numbe
 If you have some questions about the code, you are welcome to open an issue or send me an email, I will respond to that as soon as possible.
 
 # License
+
+Established code released as open-source software under the MIT license
 
 # Citation
 
