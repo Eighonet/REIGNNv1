@@ -4,6 +4,7 @@ from tqdm import tqdm
 import json
 from collections import Counter
 import itertools
+import random
 
 import pandas as pd
 import numpy as np
@@ -164,7 +165,6 @@ def preprocessing(global_dataset:list, dataset_name:str = "test_dataset") -> lis
     vectorized_abstracts = []
     for i in tqdm(range(len(papers_features_abstracts))):
         abstract = papers_features_abstracts[i]
-        print(abstract)
         vectorized_abstracts.append(model([abstract])[0])
 
     vectorized_abstracts_list = [
@@ -218,7 +218,7 @@ def extract_subgraph(global_dataset:list, processed_data:list, subgraph_name:str
     edge_to_index_G, G = get_nx_graph(papers_edge_list_indexed_np)
     
     try:
-        authors_edges_papers['papers_indices'] = authors_edges_papers['papers_indices'].apply(lambda x: x.remove('[').remove(']').split(','))
+        authors_edges_papers['papers_indices'] = authors_edges_papers['papers_indices'].apply(lambda x: x.replace('[', '').replace(']', '').split(','))
     except:
         pass
     
@@ -248,6 +248,57 @@ def extract_subgraph(global_dataset:list, processed_data:list, subgraph_name:str
     papers_to_delete_initial = list(set(unique_papers) - set(G.nodes))
     G_sub = G.subgraph(unique_papers)
     G_sub_nodes = list(G_sub.nodes())
+    
+    
+    
+    papers_out_lcc = papers_to_delete_initial
+    collabs_indices_to_delete = []
+
+    for i in tqdm(range(len(papers_out_lcc))):
+        for j in range(len(authors_edges_papers_sub)):
+            #        if str(1745104) in authors_edges_papers_sub[j]:
+            #            jj.append(j)
+            if str(papers_out_lcc[i]) in authors_edges_papers_sub[j]:
+                del authors_edges_papers_sub[j][
+                    authors_edges_papers_sub[j].index(str(papers_out_lcc[i]))
+                ]
+                if len(authors_edges_papers_sub[j]) == 0:
+                    collabs_indices_to_delete.append(j)
+
+    A_sub_clear = nx.DiGraph(sub_A)
+    A_sub_clear_edges = list(A_sub_clear.edges())
+
+    for i in tqdm(range(len(collabs_indices_to_delete))):
+        edge = A_sub_clear_edges[collabs_indices_to_delete[i]]
+        if edge not in A_sub_clear_edges:
+            print("error")
+
+        A_sub_clear.remove_edge(*edge)
+
+    authors_edges_papers_sub_clear = [
+        authors_edges_papers_sub[i]
+        for i in range(len(authors_edges_papers_sub))
+        if len(authors_edges_papers_sub[i]) > 0
+    ]
+
+
+    A_sub_clear_edges_check = list(A_sub_clear.edges())
+
+    authors_edges_papers_sub_2 = [
+        authors_edges_papers["papers_indices"][edge_to_index_A[A_sub_clear_edges_check[i]]]
+        for i in tqdm(range(len(A_sub_clear_edges_check)))
+    ]
+
+    authors_edges_papers_sub_2 = [
+        authors_edges_papers["papers_indices"][edge_to_index_A[A_sub_clear_edges_check[i]]]
+        for i in tqdm(range(len(A_sub_clear_edges_check)))
+    ]
+    authors_edges_papers_sub_flat_2 = [
+        int(item) for subarray in authors_edges_papers_sub_2 for item in subarray
+    ]
+    unique_papers_2 = list(set(authors_edges_papers_sub_flat_2))
+
+    G_sub_clear = G_sub
     
     try:
         os.mkdir('datasets')
