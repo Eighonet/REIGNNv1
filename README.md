@@ -26,7 +26,7 @@ wandb==0.12.9
 
 # Datasets
 
-For the evaluation purposes, we established two datasets of different size which could be used for evaluation of the REIGNN model. The initial data was gathered from the [Semantic Scholar Open Research Corpus](https://api.semanticscholar.org/corpus) and [SCImago Journal & Country Rank
+We established two datasets of different sizes which could be used for the evaluation of the REIGNN model. The initial data was gathered from the [Semantic Scholar Open Research Corpus](https://api.semanticscholar.org/corpus) and [SCImago Journal & Country Rank
 website](https://www.scimagojr.com).
 
 <table>
@@ -68,10 +68,10 @@ website](https://www.scimagojr.com).
   </tr>
 </table>
 
-In order to obtain full datasets, it is required to download additional files via _download.sh_. Final revision of files structure includes general and local parts of datasets.
+In order to obtain full datasets, it is required to download additional files via _download.sh_. The final revision of the file structure includes general and local parts of datasets.
 
 ## General part (common for all datasets)
-We use common subgraph extracted from Semantic Scholar Corpus as the basis for all of our datasets. All papers belong to the period from January 1st 2010 to December 31st 2021 and related to the area of Computer Science. 
+We use a common subgraph extracted from Semantic Scholar Corpus as the basis for all of our datasets. All papers belong to the period from January 1st, 2011 to December 31st, 2021 and related to the area of Computer Science. 
 
 - _SSORC_CS_2010_2021_authors_edge_list.csv_ - common graph edge list.
 - _SSORC_CS_2010_2021_authors_edges_papers_indices.csv_ - common table describing relations between edges in a co-authorship graph (collaborations) and nodes in a citation graph (papers).  
@@ -131,7 +131,7 @@ run(wandb_output, project_name, group, entity, mt_weights, model, optimizer, cri
 
 # Constructing your own dataset
 
-We also publish our code regarding processing of initial datasets. It can be freely used for the construction of new heterogeneous graphs -
+We also publish our code regarding the processing of initial datasets. It can be freely used for the construction of new heterogeneous graphs -
 
 ```python
 from dataset_extractor.loader import load
