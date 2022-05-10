@@ -159,7 +159,7 @@ extract_subgraph(global_dataset, processed_data, local_dataset_name, nodes_numbe
 
 # Contact us
 
-If you have some questions about the code, you are welcome to open an issue or send me an email, I will respond to that as soon as possible.
+If you have some questions about the code, you are welcome to open an issue or send me an email (see GitHub profile), I will respond to that as soon as possible.
 
 # License
 
