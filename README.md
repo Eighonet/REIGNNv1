@@ -24,7 +24,7 @@ torch-geometric==2.0.3
 wandb==0.12.9
 ```
 
-Attention -- **installing PyTorch Geometric can be tricky**.
+Attention -- **installing PyTorch Geometric for GPU can be tricky**.
 
 # Datasets
 
