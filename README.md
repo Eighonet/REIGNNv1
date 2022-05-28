@@ -24,6 +24,8 @@ torch-geometric==2.0.3
 wandb==0.12.9
 ```
 
+Attention -- **installing PyTorch Geometric can be tricky**.
+
 # Datasets
 
 We established two datasets of different sizes which could be used for the evaluation of the REIGNN model. The initial data was gathered from the [Semantic Scholar Open Research Corpus](https://api.semanticscholar.org/corpus) and [SCImago Journal & Country Rank
