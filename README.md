@@ -1,7 +1,7 @@
 # REIGNN | Version 1 
 
-![Pipeline_image](model/images/recommender_pipeline_rev4.png#gh-light-mode-only)
-![Pipeline_image](model/images/recommender_pipeline_rev4dm.png#gh-dark-mode-only)
+![Pipeline_image](resources/recommender_pipeline_rev4.png#gh-light-mode-only)
+![Pipeline_image](resources/recommender_pipeline_rev4dm.png#gh-dark-mode-only)
 
 Welcome to the official repo of the REIGNNv1 model -- GNN-based recommender system for scientific collaborations assessment. Here we present the source code for ISWC'22 paper "Recommendations Become Even More Useful:
 Multi-task Extension of Scientific Collaborations Forecasting".
@@ -132,6 +132,9 @@ run(wandb_output, project_name, group, entity, mt_weights, model, optimizer, cri
 ```
 
 # Constructing your own dataset
+
+![Package_image](resources/iswc_package_scheme.png#gh-light-mode-only)
+![Package_image](resources/iswc_package_scheme_bl.png#gh-dark-mode-only)
 
 We also publish our code regarding the processing of initial datasets. It can be freely used for the construction of new heterogeneous graphs -
 
