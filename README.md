@@ -136,7 +136,7 @@ run(wandb_output, project_name, group, entity, mt_weights, model, optimizer, cri
 ![Package_image](resources/iswc_package_scheme_wh_upd.png#gh-light-mode-only)
 ![Package_image](resources/iswc_package_scheme_dm_upd.png#gh-dark-mode-only)
 
-We also publish our code regarding the processing of initial datasets. It can be freely used for the construction of new heterogeneous graphs -
+We publish our code regarding the processing of initial datasets. It can be freely used for the construction of new heterogeneous graphs -
 
 ```python
 from dataset_extractor.loader import load
