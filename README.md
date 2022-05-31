@@ -133,8 +133,8 @@ run(wandb_output, project_name, group, entity, mt_weights, model, optimizer, cri
 
 # Constructing your own dataset
 
-![Package_image](resources/iswc_package_scheme_wh_upd.png#gh-light-mode-only)
-![Package_image](resources/iswc_package_scheme_dm_upd.png#gh-dark-mode-only)
+![Package_image](resources/iswc_package_scheme_wh_upd_left.png#gh-light-mode-only)
+![Package_image](resources/iswc_package_scheme_dm_upd_left.png#gh-dark-mode-only)
 
 We publish our code regarding the processing of initial datasets. It can be freely used for the construction of new heterogeneous graphs -
 
