@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  reignn_demo_backend:
+    build: .
+    ports:
+      - "9998:9998"

@@ -1,0 +1,59 @@
+html, body
+  width: 100%
+  height: 100%
+  padding: 0
+  margin: 0
+
+a:link,
+a:visited,
+a:hover,
+a:active
+  text-decoration: none
+  color: black
+
+.center
+  display: grid
+  justify-content: center
+
+.main
+  background: white
+  width: 100%
+  display: grid
+  grid-template-columns: 1.2fr 4fr 1.2fr
+
+.searchbox_wrapper
+  padding: 20px
+
+.search_title
+  margin-left: 5px
+  padding-bottom: 27px
+  font-size: 22pt
+
+.github
+  display: grid
+  grid-auto-columns: 1fr 2fr
+  position: absolute
+  left: 0
+  bottom: 0
+  text-align: right
+  font-size: 14pt
+  padding: 25px
+  text-align: center
+  justify-content: center
+
+.gh_icon
+  background: url("../images/gh_icon.png") no-repeat 50%
+  background-size: 100%
+  height: 65px
+  width: 65px
+
+*::-webkit-scrollbar-track
+  background-color: #F5F5F5
+
+*::-webkit-scrollbar
+  width: 4px
+  background-color: #F5F5F5
+
+*::-webkit-scrollbar-thumb
+  background-color: #212121
+  border: 2px solid #868686

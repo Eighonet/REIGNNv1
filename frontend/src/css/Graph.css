@@ -1,0 +1,32 @@
+.inner_container {
+  height: 100%;
+  width: 100%;
+}
+
+.info_box {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  left: 100px;
+  z-index: 10;
+  border-radius: 3px;
+  color: black;
+  font-size: 10pt;
+  padding: 10px;
+  width: 1070px;
+  height: 113px;
+  visibility: visible;
+  position: absolute;
+}
+.info_box .title {
+  font-size: 12pt;
+  padding-bottom: 5px;
+}
+.info_box .field {
+  padding: 2px;
+}
+.info_box .field .value {
+  text-align: left;
+}
+
+/*# sourceMappingURL=Graph.css.map */

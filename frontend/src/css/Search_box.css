@@ -1,0 +1,109 @@
+.newResearcher_button {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  background: white;
+  border-left: 1px solid lightgrey;
+  cursor: pointer;
+}
+
+.symbol_add {
+  padding: 14px 15px;
+  text-align: center;
+}
+
+.team {
+  display: grid;
+  margin-top: 20px;
+  background: white;
+  min-height: 0px;
+  max-height: 300px;
+  border-radius: 0.5em 0.5em 0em 0em;
+  overflow: auto;
+  grid-template-rows: 35px 1fr;
+  border: 1px solid lightgrey;
+  overflow-x: hidden;
+}
+
+.inner_team {
+  padding: 10px;
+}
+
+.team_title {
+  font-size: 14pt;
+  padding: 10px;
+  padding-left: 18px;
+}
+
+.drop_button {
+  display: grid;
+  border: 1px solid lightgrey;
+  border-top: 0px;
+  border-right: 0px;
+  background: white;
+  text-align: center;
+  border-radius: 0em 0em 0em 0.5em;
+  align-content: center;
+}
+
+.confirm_button {
+  display: grid;
+  border: 0.5px solid lightgrey;
+  border-top: 0px;
+  text-align: center;
+  background: white;
+  border-radius: 0em 0em 0.5em 0em;
+  align-content: center;
+}
+
+.buttons {
+  min-height: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  padding: 10px;
+}
+
+.form_inputs {
+  display: grid;
+  grid-auto-rows: 1fr 1fr;
+}
+
+.checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.input_wrapper {
+  display: grid;
+  grid-auto-rows: 1fr 1fr;
+  margin-top: 3px;
+}
+
+.checkbox {
+  padding: 2px;
+  font-size: 13px;
+}
+
+.new_user {
+  padding: 3px;
+  width: 200px;
+}
+
+h4 {
+  margin-bottom: 10px;
+}
+
+.button_apply {
+  cursor: pointer;
+  margin-top: 15px;
+  background-color: white;
+  padding: 5px;
+  width: 90px;
+}
+
+/*# sourceMappingURL=Search_box.css.map */
