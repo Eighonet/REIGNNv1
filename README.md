@@ -11,6 +11,7 @@ arXiv PDF: _to be added_.
 
 # Prerequisites
 
+For the REIGNN model:
 ```
 numpy==1.19.5
 pandas==1.3.0
@@ -22,8 +23,22 @@ torch-spline-conv==1.2.1
 torch-geometric==2.0.3
 wandb==0.12.9
 ```
-
 Attention -- **installing PyTorch Geometric for GPU can be tricky**.
+
+For backend:
+```shell
+python = "~3.8"
+fastapi = "^0.73.0"
+pydantic = { extras = ["dotenv"], version = "^1.8.2" }
+uvicorn = "^0.17.4"
+cookiecutter = "^1.7.3"
+loguru = "^0.6.0"
+pandas = "^1.4.0"
+scipy = "^1.8.0"
+networkx = "^2.6.3"
+mypy = "^0.931"
+ujson = "^5.1.0"
+```
 
 # Datasets
 
@@ -129,6 +144,10 @@ optimizer, criterion = torch.optim.Adam(model.parameters(), lr=lr), nn.L1Loss()
 run(wandb_output, project_name, group, entity, mt_weights, model, optimizer, criterion, operator, batch_list_x, batch_list_owner, epochs_per_launch)
 
 ```
+
+# App running
+
+In order to create .venv and install dependencies for the app running, you need to execute `.backend/setup.sh`. For server launch, it is required to use `.backend/start.sh`.
 
 # Constructing your own dataset
 
