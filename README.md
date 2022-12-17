@@ -5,7 +5,7 @@
 
 Welcome to the official repo of the REIGNNv1 model -- GNN-based recommender system for scientific collaborations assessment. Here we present the source code for the paper "Recommendations Become Even More Useful: Multi-task Extension of Scientific Collaborations Forecasting".
 
-[Vadim Porvatov](https://www.researchgate.net/profile/Vadim-Porvatov)*, Vladislav Tishin, Natalia Semenova, Anastasia Martynova
+*anonymous placeholder for authors list*
 
 arXiv PDF: _to be added_.
 
