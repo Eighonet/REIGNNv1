@@ -1,7 +1,6 @@
 # REIGNN | Version 1 
 
 ![Pipeline_image](resources/recommender_pipeline_rev4.png#gh-light-mode-only)
-![Pipeline_image](resources/recommender_pipeline_rev4dm.png#gh-dark-mode-only)
 
 Welcome to the official repo of the REIGNNv1 model -- GNN-based recommender system for scientific collaborations assessment. Here we present the source code for the paper "Recommendations Become Even More Useful: Multi-task Extension of Scientific Collaborations Forecasting".
 
